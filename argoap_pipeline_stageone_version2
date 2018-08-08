@@ -54,6 +54,14 @@ if($opt_h  ||  ($opt_i eq "") ){
 $opt_n ||= 1;
 $opt_f ||="fq";
 $opt_o ||= ".";
+
+$tmp_o_char = substr $opt_o, -1;
+
+if ($tmp_o_char eq "/") {
+    chop $opt_o
+}
+
+
 #$opt_c ||= 1;
 $opt_c ||="U";  ##U represent using universal single copy marker genes to estimate the cell number, wheras S is using 16S to estimate the cell number 
 unless(-d $opt_o){
